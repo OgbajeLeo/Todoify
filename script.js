@@ -79,7 +79,7 @@ const fetchTodo =()=>{
 
 //DELETE TODO
 const deleteTodo =(id)=>{
-    const new_Db =JSON.parse(localStorage.getItem(DB_NAME)) ||[]
+    const new_Db =JSON.parse(localStorage.getItem(DB_NAME)) || []
     Swal.fire({
         title: 'Are you sure?',
         text: "You won't be able to revert this!",
@@ -113,7 +113,7 @@ const deleteTodo =(id)=>{
 const handleEditMode = (id)=>{
 console.log(id)
 
-const todo_db = JSON.parse(localStorage.getItem(DB_NAME)) ||[]
+const todo_db = JSON.parse(localStorage.getItem(DB_NAME)) || []
 const todo_to_update =todo_db.find((todo)=>todo.uuid === id
 )
 
