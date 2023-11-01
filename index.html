@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <title>Lee TODOify</title>
+</head>
+
+<body class="max-w-full m-10 bg-gray-100">
+
+
+  <div class="container mx-auto max-w-3xl mt-16 p-6 bg-white rounded-md shadow-md">
+
+    <h1 class="text-3xl border-b border-cyan-300 font-bold mb-4 text-center text-green-300 text-3xl">TODOIFY</h1>
+
+    <div class="flex flex-col md:flex-row mb-4 md:text-center gap-2">
+      <input type="text" id="todo-input" class="flex-1 border p-2 rounded-l focus:outline-none mb-2 md:mb-0 md:mr-2"
+        placeholder="Add a todo ...">
+
+      <button class="bg-green-700 w-[150px] rounded-md p-2 text-white hover:bg-green-950 mx-auto md:w-auto"
+        type="button" id="add-todo-Btn" onclick="addTodo()">Add Todo</button>
+      <button class="hidden bg-yellow-500 w-[150px] rounded-md p-2 text-white hover:bg-yellow-700 mx-auto md:w-auto"
+        type="button" id="update-todo-Btn" onclick="updateTodo()">Update Todo</button>
+
+    </div>
+
+    <!-- display error prompt on the UI -->
+    <p id="prompt" class="text-center text-red-600"></p>
+
+    <!-- TodoList Container  -->
+    <section class="mt-12  m-auto" id="todoContainer"></section>
+    </section>
+  </div>
+
+  <!-- <script src="./util.js"></script> -->
+  <script src="./script.js"></script>
+</body>
+
+</html>

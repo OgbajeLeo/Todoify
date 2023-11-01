@@ -1,4 +1,9 @@
-uuid()
+function uuid() {
+    return 'xxxxxxxx-xxxx-4xxx-yxxx-xxxxxxxxxxxx'.replace(/[xy]/g, function(c) {
+        var r = Math.random()*16|0, v = c == 'x' ? r : (r&0x3|0x8);
+        return v.toString(16);
+    });
+}
 
 const DB_NAME ="todo-db"
 const todoInput=document.querySelector("#todo-input");
@@ -24,7 +29,7 @@ const addTodo =()=>{
         title:todoInput.value,
         created_on: Date.now()
     }
-    const newTodo = todo_DB()
+    const newTodo = JSON.parse(localStorage.getItem(DB_NAME) )|| []
     localStorage.setItem(DB_NAME,JSON.stringify([...newTodo,Todo]))
     todoInput.value='';
     fetchTodo()
@@ -33,9 +38,9 @@ const addTodo =()=>{
 
 //fetch and renders todo to TODOLIST
 const fetchTodo =()=>{
-    const todoInstance = todo_DB()
+    const todoInstance =JSON.parse(localStorage.getItem(DB_NAME)) || []
     const todoWrapper = document.querySelector('#todoContainer');
-    const dbEmpty = todoInstance.length === 0
+    const dbEmpty = todoInstance.length === 0 || null
     if(dbEmpty){
         todoWrapper.innerHTML = `<p class='text-center text-slate-400'>TODOLIST IS EMPTY, Add now....</p>`
         return
@@ -74,7 +79,7 @@ const fetchTodo =()=>{
 
 //DELETE TODO
 const deleteTodo =(id)=>{
-    const new_Db =todo_DB()
+    const new_Db =JSON.parse(localStorage.getItem(DB_NAME)) ||[]
     Swal.fire({
         title: 'Are you sure?',
         text: "You won't be able to revert this!",
@@ -108,7 +113,7 @@ const deleteTodo =(id)=>{
 const handleEditMode = (id)=>{
 console.log(id)
 
-const todo_db = todo_DB()
+const todo_db = JSON.parse(localStorage.getItem(DB_NAME)) ||[]
 const todo_to_update =todo_db.find((todo)=>todo.uuid === id
 )
 
@@ -124,7 +129,17 @@ updateBtn.setAttribute('todo_id_to_update',id)
 
 //Actual Update BTN
 const updateTodo =(id)=>{
-    inputCheck('Kindly Enter a Title, Field cannot be emptyLEO...')
+    if(!todoInput.value){
+
+        const formMessage = document.querySelector("#prompt");       
+        formMessage.classList.remove('hidden');
+        formMessage.innerHTML = "Kindly Enter a Title, Field cannot be empty..."
+
+        setTimeout(()=>{
+            formMessage.classList.add('hidden')
+        },5000)
+        return
+    }
 
     const updateBtn = document.querySelector('#update-todo-Btn')
    const todo_id_to_update= updateBtn.getAttribute('todo_id_to_update')
