@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <title>TODOIFY</title>
+  </head>
+  <body class="max-w-full m-10">
+    <header>
+      <h1 class="py-5 px-8 border border-b-cyan-300 text-green-900 text-3xl">
+        MY TODIFY
+      </h1>
+    </header>
+    <main class="m-auto flex flex-col sm:flex-rol text-center">
+    <form action="" class="">
+      <input 
+      type="text" 
+      placeholder="Add a todo..." 
+      class="border m-4 py-1.5 px-2 rounded-lg border-b-gray-800 w-[60%]" 
+      required 
+      id="todo-input" />
+      <button 
+      class="bg-blue-800 w-[150px] rounded-2xl p-2 text-white" 
+      type="button"
+      onclick="addTodo()"
+      >Add Todo</button>
+    </form>
+    </main>
+
+    <section class="mt-5 w-[70%] m-auto" id="todoContainer"></section>   
+          </section> 
+   </div>
+
+   <script src="https://cdn.tailwindcss.com"></script>
+  <script src="./todify.js"></script>
+  </body>
+  
+</html>
