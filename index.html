@@ -10,15 +10,18 @@
   <link rel="shortcut icon" href="https://assets.dryicons.com/uploads/icon/svg/6150/c40a9e1f-308b-48f1-b49e-14ef0e05af70.svg" type="image/x-icon">
 </head>
 
-<body class="max-w-full m-10 bg-gray-100">
+<body class="max-w-full m-4 bg-gray-100 text-black">
 
 
-  <div class="container mx-auto max-w-3xl mt-16 p-6 bg-white rounded-md shadow-md">
-
-    <h1 class="text-3xl border-b border-cyan-300 font-bold mb-4 text-center text-green-300 text-3xl">TODOIFY</h1>
+  <div class="container mx-auto max-w-3xl mt-16 p-6 bg-slate-800 rounded-md shadow-md md:w-full">
+   
+    <div class="flex flex-col items-center">
+      <img class="w-20 h-20 mb-2" src="https://cdn-icons-png.flaticon.com/512/6194/6194029.png" alt="Logo">
+      <h1 class="text-3xl font-bold text-slate-300 text-center pb-4 md:text-4xl">TODOIFY</h1>
+    </div>
 
     <div class="flex flex-col md:flex-row mb-4 md:text-center gap-2">
-      <input type="text" id="todo-input" class="flex-1 border p-2 rounded-l focus:outline-none mb-2 md:mb-0 md:mr-2"
+      <input type="text" id="todo-input" class="flex-1 border p-2 placeholder-blue-900 placeholder-opacity-90 rounded-l focus:outline-none mb-2 md:mb-0 md:mr-2"
         placeholder="Add a todo ...">
 
       <button class="bg-green-700 w-[150px] rounded-md p-2 text-white hover:bg-green-950 mx-auto md:w-auto"
@@ -36,7 +39,7 @@
     </section>
   </div>
 
-  <!-- <script src="./util.js"></script> -->
+  <script src="./util.js"></script>
   <script src="./script.js"></script>
 </body>
 
