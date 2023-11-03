@@ -13,11 +13,13 @@
 <body class="max-w-full m-4 bg-gray-100 text-black">
 
 
-  <div class="container mx-auto max-w-3xl mt-16 p-6 bg-slate-800 rounded-md shadow-md md:w-full">
+  <div class="container mx-auto max-w-3xl mt-8 p-6 bg-slate-800 rounded-md shadow-md md:w-full">
    
-    <div class="flex flex-col items-center">
+    <div class="flex mb-10 items-center">
       <img class="w-20 h-20 mb-2" src="https://cdn-icons-png.flaticon.com/512/6194/6194029.png" alt="Logo">
-      <h1 class="text-3xl font-bold text-slate-300 text-center pb-4 md:text-4xl">TODOIFY</h1>
+      <div class="text-left"><h1 class="text-3xl font-bold text-slate-300 md:text-2xl text-left">TODOIFY</h1>
+        <small class="text-[10px] text-white">...ensuring important things are never forgotten !</small>
+      </div>
     </div>
 
     <div class="flex flex-col md:flex-row mb-4 md:text-center gap-2">
@@ -32,7 +34,7 @@
     </div>
 
     <!-- display error prompt on the UI -->
-    <p id="prompt" class="text-center text-red-600"></p>
+    <p id="prompt" class="text-center text-red-400"></p>
 
     <!-- TodoList Container  -->
     <section class="mt-12  m-auto" id="todoContainer"></section>
