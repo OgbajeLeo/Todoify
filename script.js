@@ -30,6 +30,11 @@ const addTodo = () => {
 //fetch and renders todo to TODOLIST
 const fetchTodo = () => {
   const todoInstance = todo_DB();
+
+//to display total todo on index page
+const count=document.getElementById('count')
+count.innerHTML=`Total : ${todoInstance.length}`
+
   const todoWrapper = document.querySelector("#todoContainer");
   const dbEmpty = todoInstance.length === 0 || null;
   if (dbEmpty) {
