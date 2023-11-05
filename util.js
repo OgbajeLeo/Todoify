@@ -30,6 +30,6 @@ if (hours >= 12) {
   hours = (hours % 12) || 12; // If hours is 0, set it to 12
 }
 
-const formattedDate = `${year}/${month}/${day} ${hours}:${minutes}${amOrPm}`
+const formattedDate = `${year}/${month}/${day} at ${hours}:${minutes}${amOrPm}`
 return (formattedDate)
 }

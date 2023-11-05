@@ -16,6 +16,7 @@ const addTodo = () => {
 
   const Todo = {
     uuid: uuid(),
+    description:'Add a description...',
     title: todoInput.value,
     created_on: Date.now(),
   };
